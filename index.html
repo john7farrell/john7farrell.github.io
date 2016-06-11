@@ -47,13 +47,25 @@
   
 
   
+    
+      
+    
 
+    
+  
+
+  
+    
+      
+    
+
+    
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -96,7 +108,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"right","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -127,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container one-collumn sidebar-position-right 
    page-home 
  ">
     <div class="headband"></div>
@@ -143,7 +155,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">theme-NexT</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -249,7 +261,227 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/11/My-New-Post/" itemprop="url">
+                <a class="post-title-link" href="/2016/06/11/machine-learning-study-notes/" itemprop="url">
+                  Machine Learning Study Notes
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-11T17:14:30+09:00" content="2016-06-11">
+              2016-06-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Study-Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Study Notes</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/11/machine-learning-study-notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/11/machine-learning-study-notes/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>by <strong>johnfarrell</strong><h3 id="What-is-Machine-Learning"><a href="#What-is-Machine-Learning" class="headerlink" title="What is Machine Learning?"></a>What is Machine Learning?</h3><h3 id="Illustration"><a href="#Illustration" class="headerlink" title="Illustration"></a>Illustration</h3><blockquote>
+<p>data -&gt; learning machine -&gt; knowledge</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><blockquote>
+<p>A computer program is said to learn from experience E with respect to some<br>class of tasks T and performance measure P, if its performance at tasks in T,<br>as measured by P, improves with experience E. — Tom M. Mitchell (1997)</p>
+</blockquote>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><p>Document Categorization, Sentiment Analysis and Opinion Mining, Face Recognition<br>, Handwritten Character Recognition, Fingerprint Identification, Speech Recognition, Bioinformatics, Social Media Analysis, Stock Market Prediction, Many More…</p>
+<ul>
+<li>Internet Search and Information Retrieval</li>
+<li>Natural Language Understanding</li>
+<li>Machine Translation</li>
+<li>Locating/tracking/identifying objects in images &amp; video</li>
+<li>Financial prediction and Business Intelligence</li>
+<li>Medical diagnosis, media image analysis</li>
+<li>Recommendation Systems</li>
+<li>Driverless Car</li>
+<li>…</li>
+</ul>
+<h3 id="Machine-Learning-Subcategories"><a href="#Machine-Learning-Subcategories" class="headerlink" title="Machine Learning Subcategories"></a>Machine Learning Subcategories</h3><ul>
+<li>Supervised Learning: <strong>given examples of inputs and corresponding outputs, predict outputs on new inputs</strong><ul>
+<li>Classification(<strong>Descrete labels</strong>), Regression(<strong>Continuous labels</strong>), etc.</li>
+</ul>
+</li>
+<li>Unsupervised Learning: <strong>given only inputs, automatically discover knowledge (labels, features, structure, etc.)</strong><ul>
+<li>Clustering(<strong>Group similar patterns like words, images…</strong>), Density Estimation, etc.</li>
+</ul>
+</li>
+<li>Semi-supervised Learning</li>
+<li>Ensemble Learning</li>
+<li>Active Learning</li>
+<li>Transfer Learning</li>
+<li>Reinforcement Learning</li>
+<li>Deep learning</li>
+<li>…</li>
+</ul>
+<h3 id="Machine-Learning-Models"><a href="#Machine-Learning-Models" class="headerlink" title="Machine Learning Models"></a>Machine Learning Models</h3><ul>
+<li>Sequential Model</li>
+<li>Graphical Model</li>
+<li>Discriminative Model<ul>
+<li><strong>Model the posterior probability of label given observation p(y|x)</strong></li>
+</ul>
+</li>
+<li>Generative Model<ul>
+<li><strong>Model the joint probability of label and observation p(x, y), and then use the Bayes rule p(y|x)=p(x,y)/p(x) for prediction</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="Machine-Learning-Phases"><a href="#Machine-Learning-Phases" class="headerlink" title="Machine Learning Phases"></a>Machine Learning Phases</h3><ol>
+<li>Training phase (using <strong>training data</strong>) <ul>
+<li>You present your data from your “gold standard” and train your model, by pairing the input with expected output</li>
+</ul>
+</li>
+<li>Test phase (using <strong>test data</strong>)<ul>
+<li>In order to estimate how good your model has been trained, and to estimate model properties (such as mean error for regression, accuracy for classification)</li>
+</ul>
+</li>
+<li>Application phase (for <strong>future data</strong>)<ul>
+<li>Now you apply your freshly-developed model to the realworld data and get the results</li>
+</ul>
+</li>
+</ol>
+<h3 id="General-Process"><a href="#General-Process" class="headerlink" title="General Process"></a>General Process</h3><ol>
+<li>Hypothesis<ul>
+<li>Math models with (unknown) parameters (or structures)</li>
+</ul>
+</li>
+<li>Learning (to estimate the parameters)<ul>
+<li>Maximum Likelihood Estimation (MLE), MAP, Bayesian Estimation</li>
+<li>Cost Function Optimization</li>
+</ul>
+</li>
+<li>Decision<ul>
+<li>Bayes decision rule</li>
+<li>Direct prediction function</li>
+</ul>
+</li>
+</ol>
+<h3 id="Learning-Criteria"><a href="#Learning-Criteria" class="headerlink" title="Learning Criteria"></a>Learning Criteria</h3><ul>
+<li>Perceptron Criterion</li>
+<li>Least Mean Square (LMS)</li>
+<li>Minimum Cross Entropy (CE)</li>
+<li>Maximum Margin Criterion</li>
+<li>Maximum Likelihood</li>
+<li>…</li>
+</ul>
+<h3 id="Optimization-Methods"><a href="#Optimization-Methods" class="headerlink" title="Optimization Methods"></a>Optimization Methods</h3><ul>
+<li>Analytic Solution</li>
+<li>Gradient Descent</li>
+<li>Stochastic Gradient Descent</li>
+<li>Newton Method</li>
+<li>Quasi-Newton Method (BFGS)</li>
+<li>Limited Memory BFGS (L-BFGS)</li>
+<li>Conjugate Gradient</li>
+<li>GIS</li>
+<li>IIS</li>
+<li>…</li>
+</ul>
+<h3 id="Machine-Learning-Models-and-Relations"><a href="#Machine-Learning-Models-and-Relations" class="headerlink" title="Machine Learning Models and Relations"></a>Machine Learning Models and Relations</h3><p>(unfinished)</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/11/my-new-post/" itemprop="url">
                   My New Post
                 </a>
               
@@ -269,13 +501,32 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/11/My-New-Post/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/11/My-New-Post/" itemprop="commentsCount"></span>
+                <a href="/2016/04/11/my-new-post/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/11/my-new-post/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -363,11 +614,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-11T20:22:45+09:00" content="2016-04-11">
+            <time itemprop="dateCreated" datetime="2016-04-11T20:24:00+09:00" content="2016-04-11">
               2016-04-11
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -471,20 +741,34 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
-               alt="john7farrell" />
-          <p class="site-author-name" itemprop="name">john7farrell</p>
+               alt="johnfarrell" />
+          <p class="site-author-name" itemprop="name">johnfarrell</p>
           <p class="site-description motion-element" itemprop="description">Moe is Justice</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -492,6 +776,44 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/john7farrell/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/john7farell" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/john7farell" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/john-farrell-47" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
           
         </div>
 
@@ -524,7 +846,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">john7farrell</span>
+  <span class="author" itemprop="copyrightHolder">johnfarrell</span>
 </div>
 
 <div class="powered-by">
