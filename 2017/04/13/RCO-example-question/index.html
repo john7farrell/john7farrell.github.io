@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Online Judge,Algorithm," />
 
 
 
@@ -92,15 +92,22 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Question From: https://www.rco.recruit.co.jp/career/engineer/entry/
+
+  過去の出題例  Q.「相手の思考を推理する」過程をプログラムで表現してください。  ※回答例はございません。予めご了承ください。  A,B,Cの3人が1～5の5枚のカードを使ってインディアンポーカーをします。  3人は、ランダムに1枚のカードを引いて額にかざ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RCO example question">
+<meta property="og:url" content="http://yoursite.com/2017/04/13/RCO-example-question/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="Question From: https://www.rco.recruit.co.jp/career/engineer/entry/
+
+  過去の出題例  Q.「相手の思考を推理する」過程をプログラムで表現してください。  ※回答例はございません。予めご了承ください。  A,B,Cの3人が1～5の5枚のカードを使ってインディアンポーカーをします。  3人は、ランダムに1枚のカードを引いて額にかざ">
+<meta property="og:updated_time" content="2017-04-14T03:11:28.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="RCO example question">
+<meta name="twitter:description" content="Question From: https://www.rco.recruit.co.jp/career/engineer/entry/
+
+  過去の出題例  Q.「相手の思考を推理する」過程をプログラムで表現してください。  ※回答例はございません。予めご了承ください。  A,B,Cの3人が1～5の5枚のカードを使ってインディアンポーカーをします。  3人は、ランダムに1枚のカードを引いて額にかざ">
 
 
 
@@ -118,7 +125,7 @@
   };
 </script>
 
-  <title> Hexo </title>
+  <title> RCO example question | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -139,9 +146,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,9 +253,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -270,10 +275,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/13/RCO-example-question/" itemprop="url">
-                  RCO example question
-                </a>
+                RCO example question
               
             
           </h1>
@@ -339,9 +341,7 @@
       
 
       
-        
-          
-            <p>Question From: <a href="https://www.rco.recruit.co.jp/career/engineer/entry/" target="_blank" rel="external">https://www.rco.recruit.co.jp/career/engineer/entry/</a></p>
+        <p>Question From: <a href="https://www.rco.recruit.co.jp/career/engineer/entry/" target="_blank" rel="external">https://www.rco.recruit.co.jp/career/engineer/entry/</a></p>
 <blockquote>
 <p>  過去の出題例<br>  Q.「相手の思考を推理する」過程をプログラムで表現してください。<br>  ※回答例はございません。予めご了承ください。<br>  A,B,Cの3人が1～5の5枚のカードを使ってインディアンポーカーをします。<br>  3人は、ランダムに1枚のカードを引いて額にかざします。相手のカードは見えますが、自分のカードは見えません。<br>  この状態で、A-&gt;B-&gt;Cの順番に、自分が1番大きい（MAX）、自分は2番目に大きい（MID）自分が1番小さい（MIN）、わからない （?）、を答えます。<br>  1人でも答えがわかった場合、そこで終了となります。「わからない」と答えた場合、回答権が次の人に移ります。 Cもわからない場合、再度Aに回答権が移ります。3人ともウソを言ったり、適当に答えてはいけません。<br>  例1）「A=1 B=4 C=5」だった場合、「A =&gt; MIN」で終了します。<br>  例2）「A=1 B=2 C=4」だった場合、「A =&gt; ?, B =&gt; MID」で終了します。<br>  Bは「Aがわからないなら、自分は5ではない」と考えるからです。<br>  以上を踏まえて、<br>  引数で「A=1 B=4 C=5」で実行すると「A =&gt;MIN」を出力<br>  引数で「A=1 B=2 C=4」で実行すると「A =&gt;?, B =&gt;MID」<br>  を出力するようなコマンドラインのプログラムを作成してください。<br>  なお、人数やカードの枚数がパラメーター化されていて、さまざまなケースがシミュレーションできるコードが望ましいです。</p>
 <p>  前 提</p>
@@ -367,384 +367,59 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span><br><span class="line">Created on Thu Apr 13 20:34:10 2017</span><br><span class="line"></span><br><span class="line">@author: john</span><br><span class="line">"""</span></span><br><span class="line"></span><br><span class="line">r_input = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">a, b, c = r_input</span><br><span class="line"></span><br><span class="line">UNKNOWN = <span class="string">'?'</span></span><br><span class="line">MAX = <span class="string">'MAX'</span></span><br><span class="line">MIN = <span class="string">'MIN'</span></span><br><span class="line">MID = <span class="string">'MIN'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">guess</span><span class="params">(x1, x2, all_cards = tuple<span class="params">(range<span class="params">(<span class="number">1</span>, <span class="number">6</span>)</span>)</span>)</span>:</span></span><br><span class="line">    gs = list(all_cards)</span><br><span class="line">    gs.remove(x1)</span><br><span class="line">    gs.remove(x2)</span><br><span class="line">    <span class="keyword">return</span> gs</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">title</span><span class="params">(x, x1, x2)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x == max([x, x1, x2]):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MAX'</span></span><br><span class="line">    <span class="keyword">elif</span> x == min([x, x1, x2]):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MIN'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MID'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(a, b, c)</span>:</span></span><br><span class="line">    msg = <span class="string">''</span></span><br><span class="line">    a_guess = guess(b, c)</span><br><span class="line">    a_title = [title(i, b, c) <span class="keyword">for</span> i <span class="keyword">in</span> a_guess]</span><br><span class="line">    <span class="keyword">if</span> len(set(a_title)) == <span class="number">1</span>:</span><br><span class="line">        msg = <span class="string">'A =&gt;'</span>+a_title[<span class="number">0</span>]</span><br><span class="line">        print(msg)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg = <span class="string">'A =&gt;'</span>+UNKNOWN</span><br><span class="line">        <span class="comment">#print(msg)</span></span><br><span class="line">    </span><br><span class="line">    b_guess = guess(a, c)</span><br><span class="line">    b_remove = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b_guess:</span><br><span class="line">        ba_guess = guess(i, c)</span><br><span class="line">        ba_title = [title(j, i, c) <span class="keyword">for</span> j <span class="keyword">in</span> ba_guess]</span><br><span class="line">        <span class="comment">#print(set(ba_title))</span></span><br><span class="line">        <span class="keyword">if</span> len(set(ba_title)) == <span class="number">1</span>:</span><br><span class="line">            b_remove.append(i)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b_remove:</span><br><span class="line">        b_guess.remove(i)</span><br><span class="line">    b_title = [title(i, a, c) <span class="keyword">for</span> i <span class="keyword">in</span> b_guess]</span><br><span class="line">    <span class="keyword">if</span> len(set(b_title)) == <span class="number">1</span>:</span><br><span class="line">        msg += <span class="string">', B =&gt;'</span>+b_title[<span class="number">0</span>]</span><br><span class="line">        print(msg)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg += <span class="string">', B =&gt;'</span>+UNKNOWN</span><br><span class="line">        <span class="comment">#print(msg)</span></span><br><span class="line">    </span><br><span class="line">    c_guess = guess(a, b)</span><br><span class="line">    c_remove = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_guess:</span><br><span class="line">        ca_guess = guess(i, b)</span><br><span class="line">        ca_title = [title(j, b, i) <span class="keyword">for</span> j <span class="keyword">in</span> ca_guess]</span><br><span class="line">        <span class="comment">#print(set(ca_title))</span></span><br><span class="line">        <span class="keyword">if</span> len(set(ca_title)) == <span class="number">1</span>:</span><br><span class="line">            c_remove.append(i)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_remove:</span><br><span class="line">        c_guess.remove(i)</span><br><span class="line">    c_remove = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_guess:</span><br><span class="line">        cb_guess = guess(i, a)</span><br><span class="line">        cb_title = [title(j, a, i) <span class="keyword">for</span> j <span class="keyword">in</span> cb_guess]</span><br><span class="line">        <span class="comment">#print(set(cb_title))</span></span><br><span class="line">        <span class="keyword">if</span> len(set(cb_title)) == <span class="number">1</span>:</span><br><span class="line">            c_remove.append(i)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_remove:</span><br><span class="line">        c_guess.remove(i)</span><br><span class="line">    c_title = [title(i, a, b) <span class="keyword">for</span> i <span class="keyword">in</span> c_guess]</span><br><span class="line">    <span class="keyword">if</span> len(set(c_title)) == <span class="number">1</span>:</span><br><span class="line">        msg += <span class="string">', C =&gt;'</span>+c_title[<span class="number">0</span>]</span><br><span class="line">        print(msg)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg += <span class="string">', C =&gt;'</span>+UNKNOWN</span><br><span class="line">        print(msg)</span><br><span class="line"></span><br><span class="line">solve(<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">solve(<span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line">cards = list(range(<span class="number">1</span>, <span class="number">6</span>))</span><br><span class="line">combs = []</span><br><span class="line">res = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> permutations(cards, <span class="number">3</span>):</span><br><span class="line">    combs.append(tuple(i))</span><br><span class="line">    res.append(solve(*tuple(i)))</span><br></pre></td></tr></table></figure>
 <p>Second the extended version.<br>Use recursion to validate if others’ answers are all ‘?’ given some guesses.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span><br><span class="line">Created on Fri Apr 14 12:08:18 2017</span><br><span class="line"></span><br><span class="line">@author: john</span><br><span class="line">"""</span></span><br><span class="line"></span><br><span class="line">UNKNOWN = <span class="string">'?'</span></span><br><span class="line">MAX = <span class="string">'MAX'</span></span><br><span class="line">MIN = <span class="string">'MIN'</span></span><br><span class="line">MID = <span class="string">'MIN'</span></span><br><span class="line">answer = [UNKNOWN, MAX, MID, MIN]</span><br><span class="line"></span><br><span class="line">n_cards = <span class="number">5</span></span><br><span class="line">m_players = <span class="number">3</span></span><br><span class="line">cards = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">4</span>]</span><br><span class="line">cards = tuple(cards)</span><br><span class="line">p_names = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]</span><br><span class="line">cnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">guess</span><span class="params">(other_cards, all_cards = tuple<span class="params">(range<span class="params">(<span class="number">1</span>, <span class="number">1</span> + n_cards)</span>)</span>)</span>:</span></span><br><span class="line">    gs = list(all_cards)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> other_cards:</span><br><span class="line">        gs.remove(i)</span><br><span class="line">    <span class="keyword">return</span> gs</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">guess_title</span><span class="params">(x, other_cards)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x == max([x] + other_cards):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MAX'</span></span><br><span class="line">    <span class="keyword">elif</span> x == min([x] + other_cards):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MIN'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MID'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">output_msg</span><span class="params">(turn, result)</span>:</span></span><br><span class="line">    msg = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(turn):</span><br><span class="line">        msg = msg + p_names[i % len(p_names)] + <span class="string">' =&gt;?, '</span></span><br><span class="line">    msg = msg + p_names[turn % len(p_names)] + <span class="string">' =&gt;'</span> + result</span><br><span class="line">    <span class="keyword">return</span> msg</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(cards, turn)</span>:</span></span><br><span class="line">    o_cards = list(cards)</span><br><span class="line">    o_cards.remove(cards[turn])</span><br><span class="line">    gs = guess(o_cards)</span><br><span class="line">    <span class="keyword">if</span> turn == <span class="number">0</span>:</span><br><span class="line">        gs_title = [guess_title(i, o_cards) <span class="keyword">for</span> i <span class="keyword">in</span> gs]</span><br><span class="line">        <span class="keyword">if</span> len(set(gs_title)) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> gs_title[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'?'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        gs_remove = []</span><br><span class="line">        <span class="keyword">for</span> gsI <span class="keyword">in</span> gs:</span><br><span class="line">            newCards = list(cards)</span><br><span class="line">            newCards[turn] = gsI</span><br><span class="line">            <span class="keyword">if</span> solve(tuple(newCards), turn - <span class="number">1</span>) != <span class="string">'?'</span>:</span><br><span class="line">                gs_remove.append(gsI)</span><br><span class="line">        <span class="keyword">for</span> gsI <span class="keyword">in</span> gs_remove:</span><br><span class="line">            gs.remove(gsI)</span><br><span class="line">        gs_title = [guess_title(i, o_cards) <span class="keyword">for</span> i <span class="keyword">in</span> gs]</span><br><span class="line">        <span class="keyword">if</span> len(set(gs_title)) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> gs_title[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'?'</span></span><br><span class="line">n_iters = <span class="number">1e3</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">res = <span class="string">'?'</span></span><br><span class="line"><span class="keyword">while</span> i &lt; n_iters <span class="keyword">and</span> res == <span class="string">'?'</span>:</span><br><span class="line">    res = solve(cards, i%<span class="number">3</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">print(output_msg(i<span class="number">-1</span>, res))</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/11/machine-learning-study-notes/" itemprop="url">
-                  Machine Learning Study Notes
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-11T17:14:30+09:00" content="2016-06-11">
-              2016-06-11
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Study-Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Study Notes</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/Online-Judge/" rel="tag">#Online Judge</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/11/machine-learning-study-notes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/11/machine-learning-study-notes/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <ul>
-<li>by <strong>johnfarrell</strong><h3 id="What-is-Machine-Learning"><a href="#What-is-Machine-Learning" class="headerlink" title="What is Machine Learning?"></a>What is Machine Learning?</h3><h3 id="Illustration"><a href="#Illustration" class="headerlink" title="Illustration"></a>Illustration</h3><blockquote>
-<p>data -&gt; learning machine -&gt; knowledge</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><blockquote>
-<p>A computer program is said to learn from experience E with respect to some<br>class of tasks T and performance measure P, if its performance at tasks in T,<br>as measured by P, improves with experience E. — Tom M. Mitchell (1997)</p>
-</blockquote>
-<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><p>Document Categorization, Sentiment Analysis and Opinion Mining, Face Recognition<br>, Handwritten Character Recognition, Fingerprint Identification, Speech Recognition, Bioinformatics, Social Media Analysis, Stock Market Prediction, Many More…</p>
-<ul>
-<li>Internet Search and Information Retrieval</li>
-<li>Natural Language Understanding</li>
-<li>Machine Translation</li>
-<li>Locating/tracking/identifying objects in images &amp; video</li>
-<li>Financial prediction and Business Intelligence</li>
-<li>Medical diagnosis, media image analysis</li>
-<li>Recommendation Systems</li>
-<li>Driverless Car</li>
-<li>…</li>
-</ul>
-<h3 id="Machine-Learning-Subcategories"><a href="#Machine-Learning-Subcategories" class="headerlink" title="Machine Learning Subcategories"></a>Machine Learning Subcategories</h3><ul>
-<li>Supervised Learning: <strong>given examples of inputs and corresponding outputs, predict outputs on new inputs</strong><ul>
-<li>Classification(<strong>Descrete labels</strong>), Regression(<strong>Continuous labels</strong>), etc.</li>
-</ul>
-</li>
-<li>Unsupervised Learning: <strong>given only inputs, automatically discover knowledge (labels, features, structure, etc.)</strong><ul>
-<li>Clustering(<strong>Group similar patterns like words, images…</strong>), Density Estimation, etc.</li>
-</ul>
-</li>
-<li>Semi-supervised Learning</li>
-<li>Ensemble Learning</li>
-<li>Active Learning</li>
-<li>Transfer Learning</li>
-<li>Reinforcement Learning</li>
-<li>Deep learning</li>
-<li>…</li>
-</ul>
-<h3 id="Machine-Learning-Models"><a href="#Machine-Learning-Models" class="headerlink" title="Machine Learning Models"></a>Machine Learning Models</h3><ul>
-<li>Sequential Model</li>
-<li>Graphical Model</li>
-<li>Discriminative Model<ul>
-<li><strong>Model the posterior probability of label given observation p(y|x)</strong></li>
-</ul>
-</li>
-<li>Generative Model<ul>
-<li><strong>Model the joint probability of label and observation p(x, y), and then use the Bayes rule p(y|x)=p(x,y)/p(x) for prediction</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="Machine-Learning-Phases"><a href="#Machine-Learning-Phases" class="headerlink" title="Machine Learning Phases"></a>Machine Learning Phases</h3><ol>
-<li>Training phase (using <strong>training data</strong>) <ul>
-<li>You present your data from your “gold standard” and train your model, by pairing the input with expected output</li>
-</ul>
-</li>
-<li>Test phase (using <strong>test data</strong>)<ul>
-<li>In order to estimate how good your model has been trained, and to estimate model properties (such as mean error for regression, accuracy for classification)</li>
-</ul>
-</li>
-<li>Application phase (for <strong>future data</strong>)<ul>
-<li>Now you apply your freshly-developed model to the realworld data and get the results</li>
-</ul>
-</li>
-</ol>
-<h3 id="General-Process"><a href="#General-Process" class="headerlink" title="General Process"></a>General Process</h3><ol>
-<li>Hypothesis<ul>
-<li>Math models with (unknown) parameters (or structures)</li>
-</ul>
-</li>
-<li>Learning (to estimate the parameters)<ul>
-<li>Maximum Likelihood Estimation (MLE), MAP, Bayesian Estimation</li>
-<li>Cost Function Optimization</li>
-</ul>
-</li>
-<li>Decision<ul>
-<li>Bayes decision rule</li>
-<li>Direct prediction function</li>
-</ul>
-</li>
-</ol>
-<h3 id="Learning-Criteria"><a href="#Learning-Criteria" class="headerlink" title="Learning Criteria"></a>Learning Criteria</h3><ul>
-<li>Perceptron Criterion</li>
-<li>Least Mean Square (LMS)</li>
-<li>Minimum Cross Entropy (CE)</li>
-<li>Maximum Margin Criterion</li>
-<li>Maximum Likelihood</li>
-<li>…</li>
-</ul>
-<h3 id="Optimization-Methods"><a href="#Optimization-Methods" class="headerlink" title="Optimization Methods"></a>Optimization Methods</h3><ul>
-<li>Analytic Solution</li>
-<li>Gradient Descent</li>
-<li>Stochastic Gradient Descent</li>
-<li>Newton Method</li>
-<li>Quasi-Newton Method (BFGS)</li>
-<li>Limited Memory BFGS (L-BFGS)</li>
-<li>Conjugate Gradient</li>
-<li>GIS</li>
-<li>IIS</li>
-<li>…</li>
-</ul>
-<h3 id="Machine-Learning-Models-and-Relations"><a href="#Machine-Learning-Models-and-Relations" class="headerlink" title="Machine Learning Models and Relations"></a>Machine Learning Models and Relations</h3><p>(unfinished)</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/11/machine-learning-study-notes/" rel="next" title="Machine Learning Study Notes">
+                <i class="fa fa-chevron-left"></i> Machine Learning Study Notes
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/04/11/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-11T20:24:00+09:00" content="2016-04-11">
-              2016-04-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/11/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/11/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -752,6 +427,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -771,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -853,6 +548,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -956,6 +662,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -972,9 +682,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'johnfarrell';
-      var disqus_identifier = 'index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2017/04/13/RCO-example-question/';
+      var disqus_title = 'RCO example question';
+      var disqus_url = 'http://yoursite.com/2017/04/13/RCO-example-question/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -985,6 +695,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
