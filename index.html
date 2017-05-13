@@ -271,6 +271,128 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/13/full-half-corner/" itemprop="url">
+                  Full half-corner transfer
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-13T19:56:21+09:00" content="2017-05-13">
+              2017-05-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/memo/" itemprop="url" rel="index">
+                    <span itemprop="name">memo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/13/full-half-corner/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/13/full-half-corner/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>by <strong>johnfarrell</strong></li>
+</ul>
+<h1 id="Script-of-full-half-corner-string-transfer"><a href="#Script-of-full-half-corner-string-transfer" class="headerlink" title="Script of full-half-corner string transfer"></a>Script of full-half-corner string transfer</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ToHalf</span><span class="params">(ustring)</span>:</span>    </span><br><span class="line">    rstring = <span class="string">""</span>  </span><br><span class="line">    <span class="keyword">for</span> uchar <span class="keyword">in</span> ustring:  </span><br><span class="line">        inside_code=ord(uchar)  </span><br><span class="line">        <span class="keyword">if</span> inside_code == <span class="number">12288</span>: <span class="comment"># space           </span></span><br><span class="line">            inside_code = <span class="number">32</span>  </span><br><span class="line">        <span class="keyword">elif</span> (inside_code &gt;= <span class="number">65281</span> <span class="keyword">and</span> inside_code &lt;= <span class="number">65374</span>): </span><br><span class="line">		<span class="comment"># except space </span></span><br><span class="line">            inside_code -= <span class="number">65248</span>  </span><br><span class="line">            rstring += chr(inside_code)  </span><br><span class="line">    <span class="keyword">return</span> rstring</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ToFull</span><span class="params">(ustring)</span>:</span>    </span><br><span class="line">    rstring = <span class="string">""</span>  </span><br><span class="line">    <span class="keyword">for</span> uchar <span class="keyword">in</span> ustring:  </span><br><span class="line">        inside_code=ord(uchar)  </span><br><span class="line">        <span class="keyword">if</span> inside_code == <span class="number">32</span>: <span class="comment"># space         </span></span><br><span class="line">            inside_code = <span class="number">12288</span></span><br><span class="line">        <span class="keyword">elif</span> (inside_code &gt;= <span class="number">65281</span><span class="number">-65248</span> <span class="keyword">and</span> inside_code &lt;= <span class="number">65374</span><span class="number">-65248</span>): </span><br><span class="line">		<span class="comment"># except space </span></span><br><span class="line">            inside_code += <span class="number">65248</span>  </span><br><span class="line">            rstring += chr(inside_code)  </span><br><span class="line">    <span class="keyword">return</span> rstring</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/10/Crawler-and-WordCloud/" itemprop="url">
                   Crawler and WordCloud
                 </a>
@@ -1058,7 +1180,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1066,7 +1188,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1075,7 +1197,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
