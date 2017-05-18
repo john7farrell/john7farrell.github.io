@@ -271,6 +271,128 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/18/bash-convert-gif-jpg/" itemprop="url">
+                  Bash convert gif jpg
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-18T13:37:00+09:00" content="2017-05-18">
+              2017-05-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/toyProject/" itemprop="url" rel="index">
+                    <span itemprop="name">toyProject</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/18/bash-convert-gif-jpg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/18/bash-convert-gif-jpg/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>by <strong>johnfarrell</strong></li>
+</ul>
+<h1 id="Shell-is-SO-COOL"><a href="#Shell-is-SO-COOL" class="headerlink" title="Shell is SO COOL!!!"></a>Shell is SO COOL!!!</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">path = $~/gif/ </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(ls <span class="variable">$path</span> -F | grep <span class="string">'/'</span>)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line">	<span class="built_in">cd</span> <span class="variable">$i</span></span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> $(ls)</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="variable">$j</span></span><br><span class="line">		<span class="built_in">echo</span> <span class="variable">$&#123;j//gif/jpg&#125;</span></span><br><span class="line">		convert <span class="variable">$j</span>[0] <span class="variable">$&#123;j//gif/jpg&#125;</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line">	<span class="built_in">cd</span> ..	</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/13/full-half-corner/" itemprop="url">
                   Full half corner transfer
                 </a>
@@ -479,7 +601,7 @@
 <ul>
 <li>crl_river.py:<br>crawling <code>https://www.techmeme.com/river</code> whose structure is simple and easy to crawl.</li>
 <li>crl_archive.py:<br>crawling <code>https://www.techmeme.com/</code> or plus some suffix accessing the past archives.</li>
-<li>crl_test.py:<br>same as crl_archive.py and just put scripts into functions. </li>
+<li>crl_by_date.py:<br>same as crl_archive.py and just put scripts into functions. </li>
 </ul>
 <p>example image of wordcloud:<br><img src="/2017/05/10/Crawler-and-WordCloud/wordcloud.jpg" alt="img"></p>
 
@@ -1180,7 +1302,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1197,7 +1319,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
