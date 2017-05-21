@@ -271,6 +271,130 @@
             
               
                 
+                <a class="post-title-link" href="/2017/05/21/kmp-algo-python/" itemprop="url">
+                  KMP algo in python
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-05-21T14:01:47+09:00" content="2017-05-21">
+              2017-05-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/memo/" itemprop="url" rel="index">
+                    <span itemprop="name">memo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/21/kmp-algo-python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/21/kmp-algo-python/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>by <strong>johnfarrell</strong></li>
+</ul>
+<h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>Really great substring matching algorithm. Just a bit difficult in understanding.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFail</span><span class="params">(p)</span>:</span></span><br><span class="line">    fail = [<span class="number">0</span>] * (len(p) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(p)):</span><br><span class="line">        j = fail[i]</span><br><span class="line">        <span class="keyword">while</span> j <span class="keyword">and</span> p[i] != p[j]: </span><br><span class="line">            j = fail[j]</span><br><span class="line">        fail[i + <span class="number">1</span>] = j + <span class="number">1</span> <span class="keyword">if</span> p[i] == p[j] <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> fail</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kmp</span><span class="params">(s, p)</span>:</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    fail = getFail(p)</span><br><span class="line">    cnt = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        <span class="keyword">while</span> j <span class="keyword">and</span> p[j] != s[i]:</span><br><span class="line">            j = fail[j]</span><br><span class="line">        <span class="keyword">if</span> s[i] == p[j]:</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> j == len(p):</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">            j = fail[j]</span><br><span class="line">    <span class="keyword">return</span> cnt</span><br><span class="line">print(getFail(<span class="string">'ABCDAB'</span>)) <span class="comment"># [0, 0, 0, 0, 0, 1, 2]</span></span><br><span class="line">print(kmp(<span class="string">'BBC ABCDAB ABCDABCDABDE'</span>, <span class="string">'ABCDAB'</span>)) <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/18/bash-convert-gif-jpg/" itemprop="url">
                   Bash convert gif jpg
                 </a>
@@ -1302,7 +1426,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

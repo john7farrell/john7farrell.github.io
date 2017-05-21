@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Coding," />
+  <meta name="keywords" content="Algorithm,Python," />
 
 
 
@@ -94,20 +94,23 @@
 
 <meta name="description" content="by johnfarrell
 
-Script of full-half-corner string transfer12345678910111213141516171819202122def ToHalf(ustring):        rstring = &quot;&quot;      for uchar in ustring:          inside_code=ord(uchar)">
+KMPReally great substring matching algorithm. Just a bit difficult in understanding.
+12345678910111213141516171819202122232425# -*- coding: utf-8 -*-def getFail(p):    fail = [0] * (l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Full half corner transfer">
-<meta property="og:url" content="http://yoursite.com/2017/05/13/full-half-corner/index.html">
+<meta property="og:title" content="KMP algo in python">
+<meta property="og:url" content="http://yoursite.com/2017/05/21/kmp-algo-python/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="by johnfarrell
 
-Script of full-half-corner string transfer12345678910111213141516171819202122def ToHalf(ustring):        rstring = &quot;&quot;      for uchar in ustring:          inside_code=ord(uchar)">
-<meta property="og:updated_time" content="2017-05-13T11:09:46.202Z">
+KMPReally great substring matching algorithm. Just a bit difficult in understanding.
+12345678910111213141516171819202122232425# -*- coding: utf-8 -*-def getFail(p):    fail = [0] * (l">
+<meta property="og:updated_time" content="2017-05-21T05:11:00.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Full half corner transfer">
+<meta name="twitter:title" content="KMP algo in python">
 <meta name="twitter:description" content="by johnfarrell
 
-Script of full-half-corner string transfer12345678910111213141516171819202122def ToHalf(ustring):        rstring = &quot;&quot;      for uchar in ustring:          inside_code=ord(uchar)">
+KMPReally great substring matching algorithm. Just a bit difficult in understanding.
+12345678910111213141516171819202122232425# -*- coding: utf-8 -*-def getFail(p):    fail = [0] * (l">
 
 
 
@@ -125,7 +128,7 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
   };
 </script>
 
-  <title> Full half corner transfer | Hexo </title>
+  <title> KMP algo in python | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -275,7 +278,7 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
             
             
               
-                Full half corner transfer
+                KMP algo in python
               
             
           </h1>
@@ -287,8 +290,8 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-05-13T19:56:21+09:00" content="2017-05-13">
-              2017-05-13
+            <time itemprop="dateCreated" datetime="2017-05-21T14:01:47+09:00" content="2017-05-21">
+              2017-05-21
             </time>
           </span>
 
@@ -317,8 +320,8 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/05/13/full-half-corner/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/13/full-half-corner/" itemprop="commentsCount"></span>
+                <a href="/2017/05/21/kmp-algo-python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/21/kmp-algo-python/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -344,7 +347,9 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
         <ul>
 <li>by <strong>johnfarrell</strong></li>
 </ul>
-<h1 id="Script-of-full-half-corner-string-transfer"><a href="#Script-of-full-half-corner-string-transfer" class="headerlink" title="Script of full-half-corner string transfer"></a>Script of full-half-corner string transfer</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ToHalf</span><span class="params">(ustring)</span>:</span>    </span><br><span class="line">    rstring = <span class="string">""</span>  </span><br><span class="line">    <span class="keyword">for</span> uchar <span class="keyword">in</span> ustring:  </span><br><span class="line">        inside_code=ord(uchar)  </span><br><span class="line">        <span class="keyword">if</span> inside_code == <span class="number">12288</span>: <span class="comment"># space           </span></span><br><span class="line">            inside_code = <span class="number">32</span>  </span><br><span class="line">        <span class="keyword">elif</span> (inside_code &gt;= <span class="number">65281</span> <span class="keyword">and</span> inside_code &lt;= <span class="number">65374</span>): </span><br><span class="line">		<span class="comment"># except space </span></span><br><span class="line">            inside_code -= <span class="number">65248</span>  </span><br><span class="line">            rstring += chr(inside_code)  </span><br><span class="line">    <span class="keyword">return</span> rstring</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ToFull</span><span class="params">(ustring)</span>:</span>    </span><br><span class="line">    rstring = <span class="string">""</span>  </span><br><span class="line">    <span class="keyword">for</span> uchar <span class="keyword">in</span> ustring:  </span><br><span class="line">        inside_code=ord(uchar)  </span><br><span class="line">        <span class="keyword">if</span> inside_code == <span class="number">32</span>: <span class="comment"># space         </span></span><br><span class="line">            inside_code = <span class="number">12288</span></span><br><span class="line">        <span class="keyword">elif</span> (inside_code &gt;= <span class="number">65281</span><span class="number">-65248</span> <span class="keyword">and</span> inside_code &lt;= <span class="number">65374</span><span class="number">-65248</span>): </span><br><span class="line">		<span class="comment"># except space </span></span><br><span class="line">            inside_code += <span class="number">65248</span>  </span><br><span class="line">            rstring += chr(inside_code)  </span><br><span class="line">    <span class="keyword">return</span> rstring</span><br></pre></td></tr></table></figure>
+<h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><p>Really great substring matching algorithm. Just a bit difficult in understanding.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFail</span><span class="params">(p)</span>:</span></span><br><span class="line">    fail = [<span class="number">0</span>] * (len(p) + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(p)):</span><br><span class="line">        j = fail[i]</span><br><span class="line">        <span class="keyword">while</span> j <span class="keyword">and</span> p[i] != p[j]: </span><br><span class="line">            j = fail[j]</span><br><span class="line">        fail[i + <span class="number">1</span>] = j + <span class="number">1</span> <span class="keyword">if</span> p[i] == p[j] <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> fail</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kmp</span><span class="params">(s, p)</span>:</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    fail = getFail(p)</span><br><span class="line">    cnt = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        <span class="keyword">while</span> j <span class="keyword">and</span> p[j] != s[i]:</span><br><span class="line">            j = fail[j]</span><br><span class="line">        <span class="keyword">if</span> s[i] == p[j]:</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> j == len(p):</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">            j = fail[j]</span><br><span class="line">    <span class="keyword">return</span> cnt</span><br><span class="line">print(getFail(<span class="string">'ABCDAB'</span>)) <span class="comment"># [0, 0, 0, 0, 0, 1, 2]</span></span><br><span class="line">print(kmp(<span class="string">'BBC ABCDAB ABCDABCDABDE'</span>, <span class="string">'ABCDAB'</span>)) <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -364,9 +369,9 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
           
-            <a href="/tags/Coding/" rel="tag">#Coding</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
         </div>
       
@@ -375,17 +380,13 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/10/Crawler-and-WordCloud/" rel="next" title="Crawler and WordCloud">
-                <i class="fa fa-chevron-left"></i> Crawler and WordCloud
+              <a href="/2017/05/18/bash-convert-gif-jpg/" rel="next" title="Bash convert gif jpg">
+                <i class="fa fa-chevron-left"></i> Bash convert gif jpg
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/18/bash-convert-gif-jpg/" rel="prev" title="Bash convert gif jpg">
-                Bash convert gif jpg <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +547,7 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Script-of-full-half-corner-string-transfer"><span class="nav-number">1.</span> <span class="nav-text">Script of full-half-corner string transfer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#KMP"><span class="nav-number">1.</span> <span class="nav-text">KMP</span></a></li></ol></div>
             
           </div>
         </section>
@@ -673,9 +674,9 @@ Script of full-half-corner string transfer12345678910111213141516171819202122def
 
     <script type="text/javascript">
       var disqus_shortname = 'johnfarrell';
-      var disqus_identifier = '2017/05/13/full-half-corner/';
-      var disqus_title = 'Full half corner transfer';
-      var disqus_url = 'http://yoursite.com/2017/05/13/full-half-corner/';
+      var disqus_identifier = '2017/05/21/kmp-algo-python/';
+      var disqus_title = 'KMP algo in python';
+      var disqus_url = 'http://yoursite.com/2017/05/21/kmp-algo-python/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
