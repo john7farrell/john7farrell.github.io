@@ -271,6 +271,141 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/14/baidu-tieba-image-crawler/" itemprop="url">
+                  Baidu tieba image crawler
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-06-14T22:01:44+09:00" content="2017-06-14">
+              2017-06-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/memo/" itemprop="url" rel="index">
+                    <span itemprop="name">memo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/14/baidu-tieba-image-crawler/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/14/baidu-tieba-image-crawler/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>by <strong>johnfarrell</strong></li>
+</ul>
+<h1 id="Simple-crawler-for-Baidu-tieba"><a href="#Simple-crawler-for-Baidu-tieba" class="headerlink" title="Simple crawler for Baidu tieba"></a>Simple crawler for Baidu tieba</h1><p>(Just for fun ~</p>
+<p>Crawling url: </p>
+<p><a href="http://tieba.baidu.com/f?kw=%E6%91%84%E5%BD%B1&amp;ie=utf-8&amp;tab=good&amp;cid=6" target="_blank" rel="external">http://tieba.baidu.com/f?kw=%E6%91%84%E5%BD%B1&amp;ie=utf-8&amp;tab=good&amp;cid=6</a></p>
+<p>This url is a threads list.<br>Each thread includes many pictures of great natural scenery.</p>
+<p>The default script downloads the first 5 pictures of each thread into local directory ‘./img_dl/[thread title]/‘. </p>
+<p>Current script can only crawl the 1st page.<br>To avoid crawling repeatly, adding md5-check or url cache may help.</p>
+<p>+++<br>Tools list:</p>
+<ul>
+<li>urllib, requests (process url, requests)</li>
+<li>BeautifulSoup (parse html elements)</li>
+<li>re (can filter unnecessary threads)</li>
+</ul>
+<p>Result:<br><img src="/2017/06/14/baidu-tieba-image-crawler/img_crawler.PNG" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span><br><span class="line">Created on Sat Jun 10 21:10:42 2017</span><br><span class="line">@author: john</span><br><span class="line"></span><br><span class="line">Simple crawler for Baidu tieba</span><br><span class="line">"""</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_src_html</span><span class="params">(urlToGet)</span>:</span></span><br><span class="line">    <span class="keyword">return</span>  requests.get(urlToGet).text</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(src)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> urllib.request.urlopen(src)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_data</span><span class="params">(data, Id, suffix, prefix=<span class="string">''</span>, path=<span class="string">'./img_dl'</span>)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(path):</span><br><span class="line">        os.makedirs((path))</span><br><span class="line">        print(<span class="string">"Directory %s was created."</span> %path)</span><br><span class="line">    <span class="keyword">with</span> open(path+prefix+str(Id)+suffix, <span class="string">'wb'</span>) <span class="keyword">as</span> to_write:</span><br><span class="line">        to_write.write(data)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_by_thread</span><span class="params">(thrd_url, thrd_title, first_n_img=<span class="number">-1</span>, originImg=True)</span>:</span></span><br><span class="line">    src_html = get_src_html(thrd_url)</span><br><span class="line">    soup = BeautifulSoup(src_html,<span class="string">'lxml'</span>)</span><br><span class="line">    img_items_raw = soup.select(<span class="string">'.BDE_Image'</span>)</span><br><span class="line">    img_origin_prefix = <span class="string">'https://imgsa.baidu.com/forum/pic/item/'</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> cnt, item <span class="keyword">in</span> enumerate(img_items_raw):</span><br><span class="line">        <span class="keyword">if</span> first_n_img &gt; <span class="number">0</span> <span class="keyword">and</span> cnt &gt; first_n_img<span class="number">-1</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        img_src = item.get(<span class="string">'src'</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> originImg:</span><br><span class="line">            img_src_origin = img_src</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            img_src_origin_fname = img_src.split(<span class="string">'/'</span>)[<span class="number">-1</span>]</span><br><span class="line">            img_src_origin = img_origin_prefix + img_src_origin_fname</span><br><span class="line">        img_data = get_data(img_src_origin).read()</span><br><span class="line">        banned_sybs = <span class="string">'&lt;&gt;/\|:""*?'</span></span><br><span class="line">        table = <span class="string">''</span>.maketrans(banned_sybs, <span class="string">'_'</span>*len(banned_sybs))</span><br><span class="line">        thrd_title_dir = thrd_title.translate(table)</span><br><span class="line">        save_data(img_data, cnt, <span class="string">'.jpg'</span>, <span class="string">'IMG'</span>+<span class="string">'_'</span>, <span class="string">'./img_dl/'</span>+thrd_title_dir+<span class="string">'/'</span>)</span><br><span class="line">        time.sleep(<span class="number">0.01</span>)</span><br><span class="line">        print(<span class="string">'No. &#123;&#125; image saved'</span>.format(cnt))</span><br><span class="line">        print(<span class="string">'img_url: '</span>, img_src_origin)</span><br><span class="line"></span><br><span class="line">url_all = <span class="string">'http://tieba.baidu.com/f?kw=%E6%91%84%E5%BD%B1&amp;ie=utf-8&amp;tab=good&amp;cid=6'</span></span><br><span class="line">src_html = get_src_html(url_all)</span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(src_html,<span class="string">'lxml'</span>)</span><br><span class="line">threads_raw = soup.select(<span class="string">'.threadlist_title'</span>)</span><br><span class="line"></span><br><span class="line">thrd_href_prefix = <span class="string">'https://tieba.baidu.com'</span></span><br><span class="line"><span class="comment">#title_cond = re.compile('[第][0-9]?[0-9]')</span></span><br><span class="line">title_cond = re.compile(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> thrd <span class="keyword">in</span> threads_raw:</span><br><span class="line">    thrd_title = thrd.select_one(<span class="string">'a'</span>).get_text()</span><br><span class="line">    <span class="keyword">if</span> os.path.exists(<span class="string">'./img_dl/'</span>+thrd_title+<span class="string">'/'</span>):</span><br><span class="line">        print(<span class="string">'Skip thread: '</span>, thrd_title)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> title_cond.findall(thrd_title):</span><br><span class="line">        thrd_href = thrd_href_prefix + thrd.select_one(<span class="string">'a'</span>).get(<span class="string">'href'</span>) +<span class="string">'?see_lz=1'</span></span><br><span class="line">        print(<span class="string">'\nCrawling thread: '</span>, thrd_title)</span><br><span class="line">        get_by_thread(thrd_href, thrd_title, <span class="number">5</span>)</span><br><span class="line">        time.sleep(<span class="number">0.01</span>)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/21/kmp-algo-python/" itemprop="url">
                   KMP algo in python
                 </a>
@@ -1426,7 +1561,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
