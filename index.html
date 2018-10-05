@@ -271,6 +271,163 @@
             
               
                 
+                <a class="post-title-link" href="/2018/10/05/General-Steps-of-Image-Classification-with-Keras/" itemprop="url">
+                  General Steps of Image Classification (with Keras)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-10-05T19:54:28+09:00" content="2018-10-05">
+              2018-10-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Study-Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Study Notes</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/10/05/General-Steps-of-Image-Classification-with-Keras/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10/05/General-Steps-of-Image-Classification-with-Keras/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>by <strong>johnfarrell</strong></p>
+</li>
+<li><p>Github: <a href="https://github.com/john7farrell/dogs-vs-cats-keras-examples" target="_blank" rel="external">https://github.com/john7farrell/dogs-vs-cats-keras-examples</a></p>
+</li>
+<li>Sources are in repository</li>
+<li>Completed visualizations/results are in url</li>
+<li>directory<ul>
+<li>input<ul>
+<li><a href="https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data" target="_blank" rel="external">dogs-vs-cats-redux-kernels-edition</a>/‘raw_data_folders’</li>
+<li><a href="https://www.kaggle.com/johnfarrell/dvc-prepare-evalset" target="_blank" rel="external">dvc-prepare-evalset</a></li>
+<li><a href="https://www.kaggle.com/gaborfodor/keras-pretrained-models" target="_blank" rel="external">keras-pretrained-models</a></li>
+</ul>
+</li>
+<li>notebook_sources<ul>
+<li>*.ipynb</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Prepare-evaluation-datasets-train-valid-test"><a href="#Prepare-evaluation-datasets-train-valid-test" class="headerlink" title="Prepare evaluation datasets (train/valid/test)"></a>Prepare evaluation datasets (train/valid/test)</h2><ul>
+<li><strong>Source</strong>: <a href="https://www.kaggle.com/johnfarrell/dvc-prepare-evalset" target="_blank" rel="external">https://www.kaggle.com/johnfarrell/dvc-prepare-evalset</a></li>
+<li>KFold(small, used here)</li>
+<li>stratified(didn’t use)</li>
+<li>random 5% split(large, didn’t use)<h2 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h2></li>
+<li><strong>Source</strong>: <a href="https://www.kaggle.com/johnfarrell/dvc-preprocessing" target="_blank" rel="external">https://www.kaggle.com/johnfarrell/dvc-preprocessing</a></li>
+<li><a href="https://keras.io/preprocessing/image/" target="_blank" rel="external">keras.preprocessing.image.ImageDataGenerator</a><h2 id="Basic-CNN"><a href="#Basic-CNN" class="headerlink" title="Basic CNN"></a>Basic CNN</h2></li>
+<li><strong>Source</strong>: <a href="https://www.kaggle.com/johnfarrell/dvc-basic-model" target="_blank" rel="external">https://www.kaggle.com/johnfarrell/dvc-basic-model</a></li>
+<li>Augmentation: ImageDataGenerator</li>
+<li><a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html" target="_blank" rel="external">Simple CNN model</a> (arranged with <a href="https://keras.io/models/about-keras-models/" target="_blank" rel="external">Model class with functional API</a>)<h2 id="Pretrained-Model-Feature-Extraction"><a href="#Pretrained-Model-Feature-Extraction" class="headerlink" title="Pretrained Model Feature Extraction"></a>Pretrained Model Feature Extraction</h2></li>
+<li><strong>Source</strong>: <a href="https://www.kaggle.com/johnfarrell/dvc-pretrained-model-feature-extract" target="_blank" rel="external">https://www.kaggle.com/johnfarrell/dvc-pretrained-model-feature-extract</a><h2 id="Pretrained-Model-Fine-tune"><a href="#Pretrained-Model-Fine-tune" class="headerlink" title="Pretrained Model Fine-tune"></a>Pretrained Model Fine-tune</h2></li>
+<li><strong>Source</strong>: <a href="https://www.kaggle.com/johnfarrell/dvc-pretrained-model-finetune" target="_blank" rel="external">https://www.kaggle.com/johnfarrell/dvc-pretrained-model-finetune</a><h2 id="More-Tricks"><a href="#More-Tricks" class="headerlink" title="More Tricks"></a>More Tricks</h2></li>
+<li><strong>Source</strong>: <a href="https://www.kaggle.com/johnfarrell/dvc-advanced-model" target="_blank" rel="external">https://www.kaggle.com/johnfarrell/dvc-advanced-model</a></li>
+<li>Custom image generator(based on image filepath)</li>
+<li><a href="https://github.com/titu1994/Snapshot-Ensembles" target="_blank" rel="external">Snapshot Ensemble</a> with <a href="https://www.jeremyjordan.me/nn-learning-rate/" target="_blank" rel="external">Cyclic Learning Rate</a></li>
+<li><a href="https://towardsdatascience.com/augmentation-for-image-classification-24ffcbc38833" target="_blank" rel="external">Test-Time Augmentation</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/06/14/baidu-tieba-image-crawler/" itemprop="url">
                   Baidu tieba image crawler
                 </a>
@@ -1559,7 +1716,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1576,7 +1733,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1604,6 +1761,15 @@
                     <i class="fa fa-facebook"></i>
                   
                   Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/JiazhenXi" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-twitter"></i>
+                  
+                  Twitter
                 </a>
               </span>
             
@@ -1653,7 +1819,7 @@
         <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
