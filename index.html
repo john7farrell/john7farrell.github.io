@@ -1204,150 +1204,6 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/13/RCO-example-question/" itemprop="url">
-                  RCO example question
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-04-13T22:25:43+09:00" content="2017-04-13">
-              2017-04-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Study-Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Study Notes</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/04/13/RCO-example-question/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/13/RCO-example-question/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Question From: <a href="https://www.rco.recruit.co.jp/career/engineer/entry/" target="_blank" rel="external">https://www.rco.recruit.co.jp/career/engineer/entry/</a></p>
-<blockquote>
-<p>  過去の出題例<br>  Q.「相手の思考を推理する」過程をプログラムで表現してください。<br>  ※回答例はございません。予めご了承ください。<br>  A,B,Cの3人が1～5の5枚のカードを使ってインディアンポーカーをします。<br>  3人は、ランダムに1枚のカードを引いて額にかざします。相手のカードは見えますが、自分のカードは見えません。<br>  この状態で、A-&gt;B-&gt;Cの順番に、自分が1番大きい（MAX）、自分は2番目に大きい（MID）自分が1番小さい（MIN）、わからない （?）、を答えます。<br>  1人でも答えがわかった場合、そこで終了となります。「わからない」と答えた場合、回答権が次の人に移ります。 Cもわからない場合、再度Aに回答権が移ります。3人ともウソを言ったり、適当に答えてはいけません。<br>  例1）「A=1 B=4 C=5」だった場合、「A =&gt; MIN」で終了します。<br>  例2）「A=1 B=2 C=4」だった場合、「A =&gt; ?, B =&gt; MID」で終了します。<br>  Bは「Aがわからないなら、自分は5ではない」と考えるからです。<br>  以上を踏まえて、<br>  引数で「A=1 B=4 C=5」で実行すると「A =&gt;MIN」を出力<br>  引数で「A=1 B=2 C=4」で実行すると「A =&gt;?, B =&gt;MID」<br>  を出力するようなコマンドラインのプログラムを作成してください。<br>  なお、人数やカードの枚数がパラメーター化されていて、さまざまなケースがシミュレーションできるコードが望ましいです。</p>
-<p>  前 提</p>
-<ul>
-<li>制限時間は1時間半</li>
-<li>今回のケースでは、「全員がわからない(無限ループ)」という結果にはなりません。</li>
-</ul>
-</blockquote>
-<p>Q: Try to present the process of inference.<br>A, B, C use 5 cards with numbers of 1~5 respectively to play <a href="https://en.wikipedia.org/wiki/Blind_man%27s_bluff_(poker)" target="_blank" rel="external">Indian Poker</a>. Everyone draws one of the cards randomly and put it on his own forehead. The cards of others can be seen but one can’t see the card on his own forehead. Now they answer “MIN”, “MAX”, “MID” or “?” by order of A-&gt;B-&gt;C.</p>
-<ul>
-<li>MIN: smallest in cards of A, B, C</li>
-<li>MAX: biggest in cards of A, B, C</li>
-<li>MID: between MIN and MAX</li>
-<li>?: don’t know<br>If one answers MAX, MIN or MID, the game will be over. If one answers ‘?’, the next will answer. It will repeat until someone answers MAX MIN or MID. All of them will not tell a lie.<br>e.g.1「A=1 B=4 C=5」<br>「A =&gt; MIN」<br>A thinks ‘I must be MIN for B and C are 4 and 5’.<br>e.g.1「A=1 B=2 C=4」<br>「A =&gt; ?, B =&gt; MID」<br>B thinks ‘A didn’t know so I can’t be 5’.</li>
-</ul>
-<p>It is desired that number of people and cards can be parameters and more kinds of circumstances can be simulated.</p>
-<p>Constrains:</p>
-<ul>
-<li>Time limit is 1.5 hours.</li>
-<li>No such cases like “All answer ‘?’”(loop).</li>
-</ul>
-<p><em>Here’s my solution and code in Python</em><br>First, simple 3 player version.<br>Just consider the process of inference.<br>A sees B, C and guesses his own possible numbers and the related answers of ‘MIN’ ‘MAX’ ‘MID’. If the answers are the same, he’ll answer it. If they are different, like ‘MIN’ ‘MAX’ ‘MIN’, he’ll answer ‘?’ for uncertainty.<br>B also guesses his possible numbers but then he will consider A’s inference first and remove the impossible guesses. For example of {A=1, B=2, C=4}, first A:’?’. B guesses ‘2, 3, 5’. He considers if {A=1, B=5, C=4}, A could answer MIN, so he can’t be 5. So he can only be 2 or 3, both are MID.<br>C also guesses but he considers both A and B and remove the impossible numbers then make the answer.<br>If it goes into a new round, they will also consider the answers of past rounds.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span><br><span class="line">Created on Thu Apr 13 20:34:10 2017</span><br><span class="line"></span><br><span class="line">@author: john</span><br><span class="line">"""</span></span><br><span class="line"></span><br><span class="line">r_input = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">a, b, c = r_input</span><br><span class="line"></span><br><span class="line">UNKNOWN = <span class="string">'?'</span></span><br><span class="line">MAX = <span class="string">'MAX'</span></span><br><span class="line">MIN = <span class="string">'MIN'</span></span><br><span class="line">MID = <span class="string">'MIN'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">guess</span><span class="params">(x1, x2, all_cards = tuple<span class="params">(range<span class="params">(<span class="number">1</span>, <span class="number">6</span>)</span>)</span>)</span>:</span></span><br><span class="line">    gs = list(all_cards)</span><br><span class="line">    gs.remove(x1)</span><br><span class="line">    gs.remove(x2)</span><br><span class="line">    <span class="keyword">return</span> gs</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">title</span><span class="params">(x, x1, x2)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x == max([x, x1, x2]):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MAX'</span></span><br><span class="line">    <span class="keyword">elif</span> x == min([x, x1, x2]):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MIN'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MID'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(a, b, c)</span>:</span></span><br><span class="line">    msg = <span class="string">''</span></span><br><span class="line">    a_guess = guess(b, c)</span><br><span class="line">    a_title = [title(i, b, c) <span class="keyword">for</span> i <span class="keyword">in</span> a_guess]</span><br><span class="line">    <span class="keyword">if</span> len(set(a_title)) == <span class="number">1</span>:</span><br><span class="line">        msg = <span class="string">'A =&gt;'</span>+a_title[<span class="number">0</span>]</span><br><span class="line">        print(msg)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg = <span class="string">'A =&gt;'</span>+UNKNOWN</span><br><span class="line">        <span class="comment">#print(msg)</span></span><br><span class="line">    </span><br><span class="line">    b_guess = guess(a, c)</span><br><span class="line">    b_remove = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b_guess:</span><br><span class="line">        ba_guess = guess(i, c)</span><br><span class="line">        ba_title = [title(j, i, c) <span class="keyword">for</span> j <span class="keyword">in</span> ba_guess]</span><br><span class="line">        <span class="comment">#print(set(ba_title))</span></span><br><span class="line">        <span class="keyword">if</span> len(set(ba_title)) == <span class="number">1</span>:</span><br><span class="line">            b_remove.append(i)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> b_remove:</span><br><span class="line">        b_guess.remove(i)</span><br><span class="line">    b_title = [title(i, a, c) <span class="keyword">for</span> i <span class="keyword">in</span> b_guess]</span><br><span class="line">    <span class="keyword">if</span> len(set(b_title)) == <span class="number">1</span>:</span><br><span class="line">        msg += <span class="string">', B =&gt;'</span>+b_title[<span class="number">0</span>]</span><br><span class="line">        print(msg)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg += <span class="string">', B =&gt;'</span>+UNKNOWN</span><br><span class="line">        <span class="comment">#print(msg)</span></span><br><span class="line">    </span><br><span class="line">    c_guess = guess(a, b)</span><br><span class="line">    c_remove = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_guess:</span><br><span class="line">        ca_guess = guess(i, b)</span><br><span class="line">        ca_title = [title(j, b, i) <span class="keyword">for</span> j <span class="keyword">in</span> ca_guess]</span><br><span class="line">        <span class="comment">#print(set(ca_title))</span></span><br><span class="line">        <span class="keyword">if</span> len(set(ca_title)) == <span class="number">1</span>:</span><br><span class="line">            c_remove.append(i)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_remove:</span><br><span class="line">        c_guess.remove(i)</span><br><span class="line">    c_remove = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_guess:</span><br><span class="line">        cb_guess = guess(i, a)</span><br><span class="line">        cb_title = [title(j, a, i) <span class="keyword">for</span> j <span class="keyword">in</span> cb_guess]</span><br><span class="line">        <span class="comment">#print(set(cb_title))</span></span><br><span class="line">        <span class="keyword">if</span> len(set(cb_title)) == <span class="number">1</span>:</span><br><span class="line">            c_remove.append(i)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> c_remove:</span><br><span class="line">        c_guess.remove(i)</span><br><span class="line">    c_title = [title(i, a, b) <span class="keyword">for</span> i <span class="keyword">in</span> c_guess]</span><br><span class="line">    <span class="keyword">if</span> len(set(c_title)) == <span class="number">1</span>:</span><br><span class="line">        msg += <span class="string">', C =&gt;'</span>+c_title[<span class="number">0</span>]</span><br><span class="line">        print(msg)</span><br><span class="line">        <span class="keyword">return</span> msg</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg += <span class="string">', C =&gt;'</span>+UNKNOWN</span><br><span class="line">        print(msg)</span><br><span class="line"></span><br><span class="line">solve(<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">solve(<span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line">cards = list(range(<span class="number">1</span>, <span class="number">6</span>))</span><br><span class="line">combs = []</span><br><span class="line">res = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> permutations(cards, <span class="number">3</span>):</span><br><span class="line">    combs.append(tuple(i))</span><br><span class="line">    res.append(solve(*tuple(i)))</span><br></pre></td></tr></table></figure>
-<p>Second, the extended version.<br>Use recursion to validate if others’ answers are all ‘?’ given some guesses.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span><br><span class="line">Created on Fri Apr 14 12:08:18 2017</span><br><span class="line"></span><br><span class="line">@author: john</span><br><span class="line">"""</span></span><br><span class="line"></span><br><span class="line">UNKNOWN = <span class="string">'?'</span></span><br><span class="line">MAX = <span class="string">'MAX'</span></span><br><span class="line">MIN = <span class="string">'MIN'</span></span><br><span class="line">MID = <span class="string">'MIN'</span></span><br><span class="line">answer = [UNKNOWN, MAX, MID, MIN]</span><br><span class="line"></span><br><span class="line">n_cards = <span class="number">5</span></span><br><span class="line">m_players = <span class="number">3</span></span><br><span class="line">cards = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">4</span>]</span><br><span class="line">cards = tuple(cards)</span><br><span class="line">p_names = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]</span><br><span class="line">cnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">guess</span><span class="params">(other_cards, all_cards = tuple<span class="params">(range<span class="params">(<span class="number">1</span>, <span class="number">1</span> + n_cards)</span>)</span>)</span>:</span></span><br><span class="line">    gs = list(all_cards)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> other_cards:</span><br><span class="line">        gs.remove(i)</span><br><span class="line">    <span class="keyword">return</span> gs</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">guess_title</span><span class="params">(x, other_cards)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x == max([x] + other_cards):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MAX'</span></span><br><span class="line">    <span class="keyword">elif</span> x == min([x] + other_cards):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MIN'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'MID'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">output_msg</span><span class="params">(turn, result)</span>:</span></span><br><span class="line">    msg = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(turn):</span><br><span class="line">        msg = msg + p_names[i % len(p_names)] + <span class="string">' =&gt;?, '</span></span><br><span class="line">    msg = msg + p_names[turn % len(p_names)] + <span class="string">' =&gt;'</span> + result</span><br><span class="line">    <span class="keyword">return</span> msg</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(cards, turn)</span>:</span></span><br><span class="line">    o_cards = list(cards)</span><br><span class="line">    o_cards.remove(cards[turn])</span><br><span class="line">    gs = guess(o_cards)</span><br><span class="line">    <span class="keyword">if</span> turn == <span class="number">0</span>:</span><br><span class="line">        gs_title = [guess_title(i, o_cards) <span class="keyword">for</span> i <span class="keyword">in</span> gs]</span><br><span class="line">        <span class="keyword">if</span> len(set(gs_title)) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> gs_title[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'?'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        gs_remove = []</span><br><span class="line">        <span class="keyword">for</span> gsI <span class="keyword">in</span> gs:</span><br><span class="line">            newCards = list(cards)</span><br><span class="line">            newCards[turn] = gsI</span><br><span class="line">            <span class="keyword">if</span> solve(tuple(newCards), turn - <span class="number">1</span>) != <span class="string">'?'</span>:</span><br><span class="line">                gs_remove.append(gsI)</span><br><span class="line">        <span class="keyword">for</span> gsI <span class="keyword">in</span> gs_remove:</span><br><span class="line">            gs.remove(gsI)</span><br><span class="line">        gs_title = [guess_title(i, o_cards) <span class="keyword">for</span> i <span class="keyword">in</span> gs]</span><br><span class="line">        <span class="keyword">if</span> len(set(gs_title)) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> gs_title[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'?'</span></span><br><span class="line">n_iters = <span class="number">1e3</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">res = <span class="string">'?'</span></span><br><span class="line"><span class="keyword">while</span> i &lt; n_iters <span class="keyword">and</span> res == <span class="string">'?'</span>:</span><br><span class="line">    res = solve(cards, i%<span class="number">3</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">print(output_msg(i<span class="number">-1</span>, res))</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/06/11/machine-learning-study-notes/" itemprop="url">
                   Machine Learning Study Notes
                 </a>
@@ -1716,7 +1572,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1733,7 +1589,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
